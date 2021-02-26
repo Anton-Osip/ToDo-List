@@ -23,6 +23,7 @@ body {
 
 section {
     width: 40%;
+    min-height: 500px;
     padding: 25px;
     background-color: rgb(216, 216, 216);
 }
