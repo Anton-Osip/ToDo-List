@@ -1,8 +1,7 @@
 const input = document.querySelector('input');
 const sectionBtn = document.querySelector('.section__btn');
 const listTasc = document.querySelector('ul');
-let ok = document.querySelectorAll('.ok');
-let del = document.querySelectorAll('.del');
+
 
 
 sectionBtn.addEventListener('click', () => {
@@ -11,18 +10,25 @@ sectionBtn.addEventListener('click', () => {
     listTasc.insertAdjacentHTML('beforeend', ` <li><span class="ok ">&#10003</span><span class="tasc">${newTask}</span> <span class="del ">&#10008</span></li>`);
     input.value = '';
 
-    ok = document.querySelectorAll('.ok');
-    del = document.querySelectorAll('.del');
+    let tasc = document.querySelectorAll('.tasc'),
+        ok = document.querySelectorAll('.ok'),
+        del = document.querySelectorAll('.del');
 
     ok.forEach(elem => {
         elem.addEventListener('click', () => {
-            elem.closest('li').classList.add('finish');
+            elem.closest('li').classList.toggle('finish');
         });
     })
 
     del.forEach(elem => {
         elem.addEventListener('click', () => {
             elem.closest('li').remove();
+        });
+    })
+
+    tasc.forEach(elem => {
+        elem.addEventListener('dblclick', () => {
+            elem.innerHTML = prompt('Введите новую задачу');
         });
     })
 
