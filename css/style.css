@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header {
+    width: 40%;
+    text-align: center;
+    background-color: rgb(0, 102, 255);
+    color: #fff;
+    padding: 15px;
+}
+
+section {
+    width: 40%;
+    padding: 25px;
+    background-color: rgb(216, 216, 216);
+}
+
+.section__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.section__btn {
+    height: 50px;
+    width: 50px;
+    border: 0px;
+    outline: none;
+    border-radius: 0 10px 10px 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 32px;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px 0 0 10px;
+    border: 0px;
+    outline: none;
+    padding: 15px;
+    font-size: 32px;
+}
+
+ul {
+    list-style: none;
+    counter-reset: section;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+    counter-increment: section;
+}
+
+.ok {
+    color: green;
+    font-size: 42px;
+    padding: 0px 5px 10px;
+    margin-right: 25px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.tasc:before {
+    content: counter(section) ". ";
+}
+
+.del {
+    color: red;
+    font-size: 42px;
+    padding: 0px 5px 10px;
+    margin-left: auto;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.finish .tasc {
+    text-decoration: line-through;
+}
+
+.finish .ok {
+    color: #c4c4c4;
+}
